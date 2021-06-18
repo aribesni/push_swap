@@ -1,5 +1,12 @@
 #include "./libft/libft.h"
 
+struct              s_list 
+{
+    int             i;
+    struct s_list   *next;
+};
+
+
 int         main(int argc, char **argv)
 {
     int     *a;
