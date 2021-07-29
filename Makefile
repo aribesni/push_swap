@@ -1,12 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/07/22 17:56:21 by aribesni          #+#    #+#              #
+#    Updated: 2021/07/22 17:56:23 by aribesni         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = 		push_swap
 
-SRC = 		main.c push_swap.c
+SRC = 		main.c operations.c push_swap.c push_swap_utils.c
+
+SRCS = 		$(addprefix ./srcs/, $(SRC))
 
 CFLAG = 	-Wall -Wextra -Werror
 
 CC = 		gcc
 
-OBJS = 		${SRC:.c=.o}
+OBJS = 		${SRCS:.c=.o}
 
 LIB = 		./libft/libft.a
 

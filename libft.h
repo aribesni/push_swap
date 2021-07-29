@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aribesni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 09:55:05 by aribesni          #+#    #+#             */
-/*   Updated: 2020/07/01 15:07:21 by aribesni         ###   ########.fr       */
+/*   Created: 2021/07/22 18:45:59 by aribesni          #+#    #+#             */
+/*   Updated: 2021/07/22 18:46:01 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 32
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
 # endif
 
 # include <sys/types.h>
@@ -84,7 +84,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void*));
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack,
-								const char *needle, size_t len);
+						const char *needle, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(const char *str, const char *set);
@@ -126,6 +126,6 @@ size_t				ft_strlcat(char *dest, const char *src, size_t destsize);
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
-								void (*del)(void*));
+						void (*del)(void*));
 
 #endif
