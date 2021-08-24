@@ -16,13 +16,15 @@ int main(int argc, char **argv)
 {
 	t_p_swap    *pile_a;
 	t_p_swap    *pile_b;
+	t_struct	data;
 
 	pile_a = NULL;
-	if (push_swap(&pile_a, argc, argv) == 0)
+	data.count = 0;
+	if (push_swap(&pile_a, &data, argc, argv) == 0)
 		return (0);
 	if (!(pile_b = malloc(sizeof(pile_a))))
 		return (-1);
-	ft_exec(&pile_a, &pile_b, argc, argv);
+	ft_exec(&pile_a, &pile_b, &data, argv);
 /*    printf("\n");
 	while (pile_a)
 	{

@@ -12,7 +12,7 @@
 
 NAME = 		push_swap
 
-SRC = 		main.c operations.c push_swap.c push_swap_utils.c
+SRC = 		main.c operations.c parse.c push_swap.c push_swap_utils.c push_swap_utils_2.c
 
 SRCS = 		$(addprefix ./srcs/, $(SRC))
 
