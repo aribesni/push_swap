@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	pile_b = malloc(sizeof(t_p_swap));
 	if (!pile_b)
 		return (-1);
+	pile_b->next = NULL;
 	ft_exec(&pile_a, &pile_b, &data, argv);
 	while (pile_a)
 	{

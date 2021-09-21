@@ -107,7 +107,7 @@ int	ft_long_arg(t_p_swap **pile_a, t_struct *data, char **argv, int i)
 			return (ft_return_error());
 		ft_add_elem(pile_a, ft_atoi(str));
 		data->count++;
+		free(str);
 	}
-	free(str);
 	return (1);
 }
