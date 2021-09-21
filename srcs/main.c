@@ -6,38 +6,36 @@
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 17:56:05 by aribesni          #+#    #+#             */
-/*   Updated: 2021/07/22 19:21:47 by aribesni         ###   ########.fr       */
+/*   Updated: 2021/08/25 09:13:30 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_p_swap    *pile_a;
-	t_p_swap    *pile_b;
-	t_struct	data;
+	t_p_swap		*pile_a;
+	t_p_swap		*pile_b;
+	t_p_swap		*temp;
+	t_struct		data;
 
 	pile_a = NULL;
+	data.max = 0;
 	data.count = 0;
+	data.big_half = NULL;
+	data.small_half = NULL;
 	if (push_swap(&pile_a, &data, argc, argv) == 0)
 		return (0);
-	if (!(pile_b = malloc(sizeof(pile_a))))
+	pile_b = malloc(sizeof(t_p_swap));
+	if (!pile_b)
 		return (-1);
 	ft_exec(&pile_a, &pile_b, &data, argv);
-/*    printf("\n");
 	while (pile_a)
 	{
-	    printf("display a : %i\n", pile_a->i);
-	    pile_a = pile_a->next;
+		temp = pile_a;
+		pile_a = pile_a->next;
+		free(temp);
 	}
-	printf("\n");
-	while (pile_b->next)
-	{
-	    printf("display b : %i\n", pile_b->i);
-		pile_b = pile_b->next;
-	}
-*/    free(pile_a);
 	free(pile_b);
 	return (0);
 }

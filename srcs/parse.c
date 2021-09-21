@@ -6,7 +6,7 @@
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 09:07:42 by aribesni          #+#    #+#             */
-/*   Updated: 2021/08/24 09:07:45 by aribesni         ###   ########.fr       */
+/*   Updated: 2021/08/25 09:50:43 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,16 +97,17 @@ int	ft_long_arg(t_p_swap **pile_a, t_struct *data, char **argv, int i)
 	char		*str;
 
 	j = ft_strlen(argv[i]) - 1;
- 	while (j > 0)
-   	{
-		str = ft_fill_str(argv, i, &j);
+	while (j > 0)
+	{
+		k = j;
+		str = ft_fill_str(argv, i, &j, k);
 		if (ft_check_if_empty(str) == 1)
-			break;
+			break ;
 		if (ft_atoli(str) < INT_MIN || ft_atoli(str) > INT_MAX)
 			return (ft_return_error());
-   		ft_add_elem(pile_a, ft_atoi(str));
-   		data->count++;
-   	}
-   	free(str);
+		ft_add_elem(pile_a, ft_atoi(str));
+		data->count++;
+	}
+	free(str);
 	return (1);
 }

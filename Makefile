@@ -12,7 +12,9 @@
 
 NAME = 		push_swap
 
-SRC = 		main.c operations.c parse.c push_swap.c push_swap_utils.c push_swap_utils_2.c
+SRC = 		ft_atoi.c ft_putchar.c ft_putendl.c ft_putstr.c ft_strlen.c main.c \
+			operations.c parse.c push_swap.c \
+			push_swap_utils.c push_swap_utils_2.c
 
 SRCS = 		$(addprefix ./srcs/, $(SRC))
 
@@ -22,11 +24,11 @@ CC = 		gcc
 
 OBJS = 		${SRCS:.c=.o}
 
-LIB = 		./libft/libft.a
+#LIB = 		./libft/libft.a
 
-L_DIR = 	./libft/
+#L_DIR = 	./libft/
 
-all:		libft ${NAME}
+all:		${NAME}
 
 libft:
 			make -C ${L_DIR}
@@ -36,12 +38,12 @@ ${NAME}:	${OBJS}
 
 clean:
 			rm -f ${OBJS}
-			make clean -C ${L_DIR}
+#			make clean -C ${L_DIR}
 
 fclean: 	clean
 			rm -f ${NAME}
-			make fclean -C ${L_DIR}
+#			make fclean -C ${L_DIR}
 
 re: 		fclean all
 
-.PHONY : 	all libft clean fclean re
+.PHONY : 	all clean fclean re
