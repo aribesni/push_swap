@@ -22,7 +22,7 @@ int	ft_check_error(t_p_swap **pile_a, int argc, char **argv)
 	while (i-- > 1)
 	{
 		if (ft_strlen(argv[i]) == 0)
-			return (ft_return_error());
+			return (ft_return_error(pile_a));
 	}
 	return (1);
 }
@@ -104,7 +104,7 @@ int	ft_long_arg(t_p_swap **pile_a, t_struct *data, char **argv, int i)
 		if (ft_check_if_empty(str) == 1)
 			break ;
 		if (ft_atoli(str) < INT_MIN || ft_atoli(str) > INT_MAX)
-			return (ft_return_error());
+			return (ft_return_error(pile_a));
 		ft_add_elem(pile_a, ft_atoi(str));
 		data->count++;
 		free(str);

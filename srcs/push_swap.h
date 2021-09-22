@@ -6,7 +6,7 @@
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 17:56:28 by aribesni          #+#    #+#             */
-/*   Updated: 2021/09/21 10:28:13 by aribesni         ###   ########.fr       */
+/*   Updated: 2021/09/22 09:49:13 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_struc
 }					t_struct;
 
 void				ft_add_elem(t_p_swap **pile, int nb);
+void				ft_free_pile(t_p_swap	**pile_a);
 void				ft_order_bits(t_p_swap **pile_a, t_p_swap **pile_b,
 						int size);
 void				ft_push(t_p_swap **pile_1, t_p_swap **pile_2, char *str);
@@ -60,7 +61,7 @@ int					ft_exec(t_p_swap **pile_a, t_p_swap **pile_b,
 int					ft_long_arg(t_p_swap **pile_a, t_struct *data, char **argv,
 						int i);
 int					ft_pile_in_order(t_p_swap **pile_a);
-int					ft_return_error(void);
+int					ft_return_error(t_p_swap **pile_a);
 int					push_swap(t_p_swap **pile_a, t_struct *data, int argc,
 						char **argv);
 int					ft_return_max(t_p_swap **pile_a);

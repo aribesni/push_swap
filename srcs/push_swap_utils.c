@@ -96,8 +96,10 @@ long int	ft_atoli(const char *str)
 	return (j * k);
 }
 
-int	ft_return_error(void)
+int	ft_return_error(t_p_swap **pile_a)
 {
 	write(2, "Error\n", 6);
+	if (pile_a)
+		ft_free_pile(pile_a);
 	return (0);
 }

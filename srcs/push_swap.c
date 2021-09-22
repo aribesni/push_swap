@@ -6,7 +6,7 @@
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 17:56:12 by aribesni          #+#    #+#             */
-/*   Updated: 2021/09/21 10:31:49 by aribesni         ###   ########.fr       */
+/*   Updated: 2021/09/22 09:48:14 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,16 +126,16 @@ int	push_swap(t_p_swap **pile_a, t_struct *data, int argc, char **argv)
 		if (ft_check_space(i, j, argv) == 1)
 			ft_long_arg(pile_a, data, argv, i);
 		else if (ft_check_space(i, j, argv) == -1)
-			return (ft_return_error());
+			return (ft_return_error(pile_a));
 		else
 		{
 			if (ft_atoli(argv[i]) < INT_MIN || ft_atoli(argv[i]) > INT_MAX)
-				return (ft_return_error());
+				return (ft_return_error(pile_a));
 			ft_add_elem(pile_a, ft_atoi(argv[i]));
 			data->count++;
 		}
 	}
 	if (ft_check_if_double(pile_a) == 0)
-		return (ft_return_error());
+		return (ft_return_error(pile_a));
 	return (1);
 }
